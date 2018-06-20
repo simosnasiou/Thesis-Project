@@ -11,23 +11,29 @@ Exoun morfh LIKE ... OR LIKE... pou epitrepei ap eytheias xrhsh apo mySQL query
 H xrisimothta tous exei elexthei me entoles SELECT COUNT(*)
 '''
 #TSIPRAS - SYRIZA
-ent1_1="title LIKE '%Τσίπρα%' OR title LIKE '%Τσιπρα%' OR title LIKE '%τσίπρα%' OR title LIKE '%τσιπρα%' OR title LIKE '%ΤΣΙΠΡΑ%' OR title LIKE '%ρωθυπουργ%' OR title LIKE '%ΡΩΘΥΠΟΥΡΓ%'"
-ent1_2="title LIKE '%Σύριζα%' OR title LIKE '%ΣΥΡΙΖΑ%' OR title LIKE '%συριζα%' OR title LIKE '%σύριζα%' OR title LIKE '%ΣΥ.ΡΙ.ΖΑ%'"
+ent1_1="{0} LIKE '%Τσίπρα%' OR {0} LIKE '%Τσιπρα%' OR {0} LIKE '%τσίπρα%' OR {0} LIKE '%τσιπρα%' OR {0} LIKE '%ΤΣΙΠΡΑ%' OR {0} LIKE '%ρωθυπουργ%' OR {0} LIKE '%ΡΩΘΥΠΟΥΡΓ%'"
+ent1_2="{0} LIKE '%Σύριζα%' OR {0} LIKE '%ΣΥΡΙΖΑ%' OR {0} LIKE '%συριζα%' OR {0} LIKE '%σύριζα%' OR {0} LIKE '%ΣΥ.ΡΙ.ΖΑ%'"
 #MITSOTAKIS - ND
-ent2_1="title LIKE '%Μητσοτ_κη%' OR title LIKE '%ΜΗΤΣΟΤ_ΚΗ%' OR title LIKE '%μητσοτ_κη%'"
-ent2_2="title LIKE '% ΝΔ %' OR title LIKE '% νδ %' OR title LIKE '%Ν_α Δημοκρατ_α%' OR title LIKE '%Ν_ας Δημοκρατ_α%' OR title LIKE '%ν_α δημοκρατ_α%' OR title LIKE '%ν_ας δημοκρατ_α%' OR title LIKE '%Ν_α Δημοκρατ_α%' OR title LIKE '%ΝΕΑ ΔΗΜΟΚΡΑΤΙΑ%' OR title LIKE '%ΝΕΑΣ ΔΗΜΟΚΡΑΤΙΑ%'"
+ent2_1="{0} LIKE '%Μητσοτ_κη%' OR {0} LIKE '%ΜΗΤΣΟΤ_ΚΗ%' OR {0} LIKE '%μητσοτ_κη%'"
+ent2_2="{0} LIKE '% ΝΔ %' OR {0} LIKE '% νδ %' OR {0} LIKE '%Ν_α Δημοκρατ_α%' OR {0} LIKE '%Ν_ας Δημοκρατ_α%' OR {0} LIKE '%ν_α δημοκρατ_α%' OR {0} LIKE '%ν_ας δημοκρατ_α%' OR {0} LIKE '%Ν_α Δημοκρατ_α%' OR {0} LIKE '%ΝΕΑ ΔΗΜΟΚΡΑΤΙΑ%' OR {0} LIKE '%ΝΕΑΣ ΔΗΜΟΚΡΑΤΙΑ%'"
 #XRYSH AYGH
-ent3_1="title LIKE '%Μιχαλολι_κο%' OR title LIKE '%ΜΙΧΑΛΟΛΙ_ΚΟ%'"
-ent3_2="title LIKE '%Χρυσ_ Αυγ%' OR title LIKE '%χρυσ_ αυγ%' OR title LIKE '%ΧΡΥΣ_ ΑΥΓ%' OR title LIKE '% ΧΑ %'"
+ent3_1="{0} LIKE '%Μιχαλολι_κο%' OR {0} LIKE '%ΜΙΧΑΛΟΛΙ_ΚΟ%'"
+ent3_2="{0} LIKE '%Χρυσ_ Αυγ%' OR {0} LIKE '%χρυσ_ αυγ%' OR {0} LIKE '%ΧΡΥΣ_ ΑΥΓ%' OR {0} LIKE '% ΧΑ %'"
 #KINHMA ALLAGHS
-ent4_1="title LIKE '%Γεννηματ%' OR title LIKE '%γεννηματ%'"
-ent4_2="title LIKE '%κ_νημα αλλαγ_%' OR title LIKE '%Κ_νημα Αλλαγ_%' OR title LIKE '%ΚΙΝΑΛ%' OR title LIKE '%ΚΙΝ.ΑΛ%'"
+ent4_1="{0} LIKE '%Γεννηματ%' OR {0} LIKE '%γεννηματ%'"
+ent4_2="{0} LIKE '%κ_νημα αλλαγ_%' OR {0} LIKE '%Κ_νημα Αλλαγ_%' OR {0} LIKE '%ΚΙΝΑΛ%' OR {0} LIKE '%ΚΙΝ.ΑΛ%'"
 #KKE
-ent5_1="title LIKE '%Κουτσο_μπα%' OR title LIKE '%ΚΟΥΤΣΟ_ΜΠΑ%' OR title LIKE '%γενικός γραμματέας του%'"
-ent5_2="title LIKE '%ΚΚΕ%' OR title LIKE '%κκε%' OR title LIKE '%κομμουνιστικ_ κ_μμα%' OR title LIKE '%Κομμουνιστικ_ Κ_μμα%'"
+ent5_1="{0} LIKE '%Κουτσο_μπα%' OR {0} LIKE '%ΚΟΥΤΣΟ_ΜΠΑ%' OR {0} LIKE '%γενικός γραμματέας του%'"
+ent5_2="{0} LIKE '%ΚΚΕ%' OR {0} LIKE '%κκε%' OR {0} LIKE '%κομμουνιστικ_ κ_μμα%' OR {0} LIKE '%Κομμουνιστικ_ Κ_μμα%'"
 #ENOSH KENTRWWN
-ent6_1="title LIKE '%Λεβ_ντη%' OR title LIKE '%%ΛΕΒ_ΝΤΗ%'"
-ent6_2="title LIKE '%νωση _εντρ_ων%' OR title LIKE '%νωσης _εντρ_ων%' OR title LIKE '%ΝΩΣΗ _ΕΝΤΡ_ΩΝ%'"
+ent6_1="{0} LIKE '%Λεβ_ντη%' OR {0} LIKE '%%ΛΕΒ_ΝΤΗ%'"
+ent6_2="{0} LIKE '%νωση _εντρ_ων%' OR {0} LIKE '%νωσης _εντρ_ων%' OR {0} LIKE '%ΝΩΣΗ _ΕΝΤΡ_ΩΝ%'"
 
-#synoliko gia katametrhsh
-ent_total=ent1_1+" OR "+ent1_2+" OR "+ent2_1+" OR "+ent2_2+" OR "+ent3_1+" OR "+ent3_2+" OR "+ent4_1+" OR "+ent4_2+" OR "+ent5_1+" OR "+ent5_2+" OR "+ent6_1+" OR "+ent6_2
+#synoliko string gia katametrhsh
+ent_total_temp=ent1_1+" OR "+ent1_2+" OR "+ent2_1+" OR "+ent2_2+" OR "+ent3_1+" OR "+ent3_2+" OR "+ent4_1+" OR "+ent4_2+" OR "+ent5_1+" OR "+ent5_2+" OR "+ent6_1+" OR "+ent6_2
+ent_total=ent_total_temp.format('title')
+#Ola ta epimerous se mia lista
+ent_list_temp=[ent1_1,ent1_2,ent2_1,ent2_2,ent3_1,ent3_2,ent4_1,ent4_2,ent5_1,ent5_2,ent6_1,ent6_2]
+ent_list=[aa.format('content_gr') for aa in ent_list_temp]
+#ta onomata twn sthlwn boolean gia to an yparxei kathe entity sth bash
+ent_collumn_names=['incl1_1','incl1_2','incl2_1','incl2_2','incl3_1','incl3_2','incl4_1','incl4_2','incl5_1','incl5_2','incl6_1','incl6_2',]

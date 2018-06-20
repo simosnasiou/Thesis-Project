@@ -41,5 +41,27 @@ def init_news_table():
         crs2.close()
         cnx.close()
 
+
+def find_entities():
+    #symplirwsh twn pediwn pou exoun na kanoun me to poio entity emfanizetai sto keimeno
+    update_entity_fields=("UPDATE news_sentiment SET {} = 1 WHERE {}")
+    try:
+        cnx = mysql.connector.connect(user='root', password='balalaika',host='127.0.0.1',database='rss')
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+            print("Something is wrong with your user name or password")
+        elif err.errno == errorcode.ER_BAD_DB_ERROR:
+                print("Database does not exist")
+        else:
+            print(err)
+    else:
+        crs=cnx.cursor(buffered=True)#poly shmatniko na einai buffered
+        for i,each_entity in enumerate(ent_list):
+            crs.execute(update_entity_fields.format(ent_collumn_names[i],each_entity))        
+        cnx.commit()
+        crs.close()
+        cnx.close()
+        
 #KYRIA DIADIKASIA
 #init_news_table() #mono mia fora xreiazetai
+find_entities()
