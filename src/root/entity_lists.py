@@ -29,6 +29,7 @@ ent5_2="{0} LIKE '%ΚΚΕ%' OR {0} LIKE '%κκε%' OR {0} LIKE '%κομμουν�
 ent6_1="{0} LIKE '%Λεβ_ντη%' OR {0} LIKE '%%ΛΕΒ_ΝΤΗ%'"
 ent6_2="{0} LIKE '%νωση _εντρ_ων%' OR {0} LIKE '%νωσης _εντρ_ων%' OR {0} LIKE '%ΝΩΣΗ _ΕΝΤΡ_ΩΝ%'"
 
+ent_names=["Τσίπρας","Σύριζα","Μιτσοτάκης","Νέα Δημοκρατία","Μηχαλολιάκος","Χυσή Αυγή","Γεννηματά","Κίνημα Αλλαγής","Κουτσούμπας","ΚΚΕ","Λεβέντης","Ένωση Κεντρώων"]
 #synoliko string gia katametrhsh
 ent_total_temp=ent1_1+" OR "+ent1_2+" OR "+ent2_1+" OR "+ent2_2+" OR "+ent3_1+" OR "+ent3_2+" OR "+ent4_1+" OR "+ent4_2+" OR "+ent5_1+" OR "+ent5_2+" OR "+ent6_1+" OR "+ent6_2
 ent_total=ent_total_temp.format('title')
@@ -36,4 +37,8 @@ ent_total=ent_total_temp.format('title')
 ent_list_temp=[ent1_1,ent1_2,ent2_1,ent2_2,ent3_1,ent3_2,ent4_1,ent4_2,ent5_1,ent5_2,ent6_1,ent6_2]
 ent_list=[aa.format('content_gr') for aa in ent_list_temp]
 #ta onomata twn sthlwn boolean gia to an yparxei kathe entity sth bash
-ent_collumn_names=['incl1_1','incl1_2','incl2_1','incl2_2','incl3_1','incl3_2','incl4_1','incl4_2','incl5_1','incl5_2','incl6_1','incl6_2',]
+ent_collumn_names=['incl1_1','incl1_2','incl2_1','incl2_2','incl3_1','incl3_2','incl4_1','incl4_2','incl5_1','incl5_2','incl6_1','incl6_2']
+#ta onomata twn sthlw gia ta athroistiko COUNT ana source kai enoia ston athroistiko pinaka
+count_collumn_names=['g1_1_count','g1_2_count','g2_1_count','g2_2_count','g3_1_count','g3_2_count','g4_1_count','g4_2_count','g5_1_count','g5_2_count','g6_1_count','g6_2_count']
+#ta onomata twn sthlw gia ta athroistiko SENTIMENT ana source kai enoia ston athroistiko pinaka
+sent_collumn_names=['g1_1_sent','g1_2_sent','g2_1_sent','g2_2_sent','g3_1_sent','g3_2_sent','g4_1_sent','g4_2_sent','g5_1_sent','g5_2_sent','g6_1_sent','g6_2_sent']
