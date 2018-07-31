@@ -6,7 +6,7 @@ Created on 18 Ιουν 2018
 '''
 Kwdikas olhs ths baskikhs analhshs. leitourgei anexarthta apo th metafrash pou ginetai stadiaka se allo script
 '''
-from root.text_functions import get_sentiment_of
+from root.text_functions import get_sentiment_of, text_filter
 from root.text_functions import clean_xml_tags
 from root.entity_lists import ent_total,ent_list,ent_collumn_names,count_collumn_names,sent_collumn_names
 import mysql.connector
@@ -92,7 +92,11 @@ def calc_sentiment():
         crs2=cnx.cursor(buffered=True)
         crs.execute(select_for_sentiment)
         for each_item in crs:
-            sen_temp=get_sentiment_of(each_item[1])
+            cur_tile=each_item[1]
+            #diwrthwsh keimenou
+            cur_tile=text_filter(cur_tile)
+            #sth synexeia ypolog sentiment
+            sen_temp=get_sentiment_of(cur_tile)
             id_temp=each_item[0]
             crs2.execute(update_sentiment.format(sen_temp,id_temp))
             cnx.commit()
@@ -128,7 +132,7 @@ def initialize_totals_table():
 def calc_lenghts():
     #YPOLOGISMOS MEGETHOUS KAI DHMIOURGIA KENWN LISTWN OPOU THA APOTHKEYTHOUN PROSORINA TA ATHROISTIKA(ANA FEED SOURCE)
     #DEDOMENA (ARITHMOS EID. - SENTIMENT) PRIN MPOYN STON PINAKA TOUS
-    #MIPWS DE XREIAZOTAN AN HTAN NA KANOUME APPEND STH calc_total_s (?)
+    #MIPWS DE XREIAZOTAN AN HTAN NA KANOUME APPEND STH calc_total_s (?) mpa kalytera etsi
     calc_size=("SELECT  COUNT(*) FROM news_totals")
     try:
         cnx = mysql.connector.connect(user='root', password='balalaika',host='127.0.0.1',database='rss')
@@ -220,9 +224,8 @@ def totals_to_table():
 #KYRIA DIADIKASIA
 #init_news_table() #mono mia fora xreiazetai
 #find_entities() # mono mia fora
-#calc_sentiment() #mono mia fora 
+#calc_sentiment() #mono mia fora alla exartatai
 #initialize_totals_table() #mono mia fora
-len(ent_list)#kathe fora
-calc_lenghts() #kathe fora
-calc_total_s() #kathe fora
-totals_to_table()#mia fora
+#calc_lenghts() #kathe fora
+#calc_total_s() #kathe fora
+#totals_to_table()#mia fora

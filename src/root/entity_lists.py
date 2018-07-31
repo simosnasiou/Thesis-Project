@@ -11,7 +11,7 @@ Exoun morfh LIKE ... OR LIKE... pou epitrepei ap eytheias xrhsh apo mySQL query
 H xrisimothta tous exei elexthei me entoles SELECT COUNT(*)
 '''
 #TSIPRAS - SYRIZA
-ent1_1="{0} LIKE '%Τσίπρα%' OR {0} LIKE '%Τσιπρα%' OR {0} LIKE '%τσίπρα%' OR {0} LIKE '%τσιπρα%' OR {0} LIKE '%ΤΣΙΠΡΑ%' OR {0} LIKE '%ρωθυπουργ%' OR {0} LIKE '%ΡΩΘΥΠΟΥΡΓ%'"
+ent1_1="{0} LIKE '%Τσίπρα%' OR {0} LIKE '%Τσιπρα%' OR {0} LIKE '%τσίπρα%' OR {0} LIKE '%τσιπρα%' OR {0} LIKE '%ΤΣΙΠΡΑ%'"
 ent1_2="{0} LIKE '%Σύριζα%' OR {0} LIKE '%ΣΥΡΙΖΑ%' OR {0} LIKE '%συριζα%' OR {0} LIKE '%σύριζα%' OR {0} LIKE '%ΣΥ.ΡΙ.ΖΑ%'"
 #MITSOTAKIS - ND
 ent2_1="{0} LIKE '%Μητσοτ_κη%' OR {0} LIKE '%ΜΗΤΣΟΤ_ΚΗ%' OR {0} LIKE '%μητσοτ_κη%'"
@@ -29,7 +29,7 @@ ent5_2="{0} LIKE '%ΚΚΕ%' OR {0} LIKE '%κκε%' OR {0} LIKE '%κομμουν�
 ent6_1="{0} LIKE '%Λεβ_ντη%' OR {0} LIKE '%%ΛΕΒ_ΝΤΗ%'"
 ent6_2="{0} LIKE '%νωση _εντρ_ων%' OR {0} LIKE '%νωσης _εντρ_ων%' OR {0} LIKE '%ΝΩΣΗ _ΕΝΤΡ_ΩΝ%'"
 
-ent_names=["Τσίπρας","Σύριζα","Μιτσοτάκης","Νέα Δημοκρατία","Μηχαλολιάκος","Χρυσή Αυγή","Γεννηματά","Κίνημα Αλλαγής","Κουτσούμπας","ΚΚΕ","Λεβέντης","Ένωση Κεντρώων"]
+ent_names=["Τσίπρας","Σύριζα","Μητσοτάκης","Νέα Δημοκρατία","Μηχαλολιάκος","Χρυσή Αυγή","Γεννηματά","Κίνημα Αλλαγής","Κουτσούμπας","ΚΚΕ","Λεβέντης","Ένωση Κεντρώων"]
 #synoliko string gia katametrhsh
 ent_total_temp=ent1_1+" OR "+ent1_2+" OR "+ent2_1+" OR "+ent2_2+" OR "+ent3_1+" OR "+ent3_2+" OR "+ent4_1+" OR "+ent4_2+" OR "+ent5_1+" OR "+ent5_2+" OR "+ent6_1+" OR "+ent6_2
 ent_total=ent_total_temp.format('title')
