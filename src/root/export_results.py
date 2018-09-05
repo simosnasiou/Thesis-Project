@@ -249,9 +249,10 @@ def produce_graphs2():
     fig = go.Figure(data=data, layout=layout)
     of.plot(fig, filename='news_counts_graph.html')
 
-#fill_names_table()
-#fill_data_tables()
+fill_names_table()
+fill_data_tables()
 #print_to_text()
 #print_to_text_grouped()
 #produce_graphs()
 #produce_graphs2()
+print(sent_perent_table)

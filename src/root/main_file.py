@@ -42,7 +42,7 @@ def init_news_table():
         crs.execute(select_news.format(ent_total))
         for an_element in crs:
             id_temp=an_element[0]
-            joined_text=an_element[1]#body kai title mazi
+            joined_text=an_element[1]#an kai leei joined einai mono to title emeine etsi apo prin to onoma
             joined_text=clean_xml_tags(joined_text) 
             feed_id_temp=an_element[3]
             #grammh sto neo pinaka me ta stoixeia tou paliou
