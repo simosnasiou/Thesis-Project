@@ -18,9 +18,9 @@ names_table=[]
 total_counts_table=[]
 #THA KRATAEI TO SYNOLIKO COUNT EIDHSEWN TOU KATHE SOURCE XWRIS AYTA POU EXAIROUNTAI APO THRESH
 total_counts_table_b=[]
-#THA KRATAEI TA EPI MEROUS (ANA ENTITY) COUNT EDISHSEWN
+#THA KRATAEI TA EPI MEROUS (ANA ENTITY kai SOURCE) COUNT EDISHSEWN
 counts_perent_table=[]
-#THA KRATAEI TA EPI MEROUS (ANA ENTITY) SENTIMENT EDISHSEWN
+#THA KRATAEI TA EPI MEROUS (ANA ENTITY kai SOURCE) SENTIMENT EDISHSEWN
 sent_perent_table=[]
 #THA KRATANE SYNOLIKA ANA ENTITY (APO ATHROISTIKA OLA TA MESA) COUNT KAI SENTIMENT
 tc=[0]*entities_nu
@@ -31,7 +31,7 @@ thresh=11
 
 #SYNARTHSH POU GEMIZEI TON PARAPANW names_table
 def fill_names_table():
-    #ARXIKOPOIHSH PINAKA ME TIS ATHROISTIKES METRHSEIS ANALOGA ME TA POSA FEED_EXOUME KTLP
+    #ARXIKOPOIHSH PINAKA ME TA ONOMATA TOU KATHE FEED 
     select_names=("SELECT  title FROM oc_news_feeds ORDER BY id;")
     try:
         cnx = mysql.connector.connect(user='root', password='balalaika',host='127.0.0.1',database='rss')
@@ -249,10 +249,10 @@ def produce_graphs2():
     fig = go.Figure(data=data, layout=layout)
     of.plot(fig, filename='news_counts_graph.html')
 
+#EKTELESH
 fill_names_table()
 fill_data_tables()
 #print_to_text()
 #print_to_text_grouped()
 #produce_graphs()
 #produce_graphs2()
-print(sent_perent_table)
