@@ -7,7 +7,7 @@
 
 **Theese include but are not limited to:**
 
--Anaconda 3 libraries like...
+- Anaconda 3 libraries like...
 - ...numpy
 - ...networkX
 - ...nltk
