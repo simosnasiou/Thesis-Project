@@ -218,6 +218,7 @@ def render_proj_graph(in_graph,graph_file_name):
     offline.plot(sxedio,filename=graph_file_name+'.html')
 
 #EKTELESH
+'''
 MG=make_main_graph()
 
 #Gia to projection twn politkwn ontothtwn
@@ -244,3 +245,4 @@ render_proj_graph(NP,'news_sources_connections')
 
 #Ektypwsh se txt
 print_communities_to_text(pp_comm,np_comm)
+'''

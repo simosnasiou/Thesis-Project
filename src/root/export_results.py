@@ -3,6 +3,10 @@ Created on 23 Ιουν 2018
 
 @author: Solegem
 '''
+'''
+Kwdikas syndiasmou twn apotelesmatwsn sentiment gia peraitairw xrhsh apo epomena arxeia
+alla kai ektypwsh se arxeia kai grafimata
+'''
 import mysql.connector
 from mysql.connector import errorcode
 from root.entity_lists import ent_names
@@ -28,6 +32,11 @@ ts=[0]*entities_nu
 
 #ORIZEI TON ELEXISTO ARITHMO EIDHSEWSN POU LAMBANOYME YP OPSIN
 thresh=11
+
+#XRHSIMOPOIHTHOUNTAI STO objectivity_calculations.py 
+percentage_table=[]
+mean_sentiment_table=[]
+grouped_mean_sentiment_array=[]
 
 #SYNARTHSH POU GEMIZEI TON PARAPANW names_table
 def fill_names_table():
@@ -104,6 +113,10 @@ def print_to_text():
         for ii,name in enumerate(names_table):
             data_file_out.write('{} - συνολικές ειδήσεις: {}\n\n'.format(name,total_counts_table[ii]))
             temp_string=''
+            #megethos pinaka posostwn kai sentiment
+            percentage_table.append([])
+            mean_sentiment_table.append([])
+            
             for ix,nm in enumerate(ent_names):
                 ae=counts_perent_table[ii][ix]
                 if ae !=0:
@@ -114,6 +127,11 @@ def print_to_text():
                     percent=ae/total_counts_table[ii]*100
                 else:
                     percent=0
+                
+                #gemisma pinka mesou sentiment gia to objectivity_calculations
+                mean_sentiment_table[ii].append(ms)
+                # o pinakas twn posostwn gemizei analoga
+                percentage_table[ii].append(percent)
                 temp_string+=("{:15}:     Μ.S: {:6.3f}     A.E: {:5} - {:6.2f}%  \n".format(nm,ms,ae,percent))
             data_file_out.write(temp_string+'\n\n')
         data_file_out.close()
@@ -141,6 +159,10 @@ def print_to_text_grouped():
                 percent=tc[ii]/38313*100
             else:
                 percent=0
+            #Symplirwsh tou athroistikou array sentiment gia to pbjectivity_calculations
+            grouped_mean_sentiment_array.append(ms)
+            
+            #EKTYPWSH STO ARXEIO
             temp_string=("{:15}:     Μ.S: {:6.3f}     A.E: {:5} - {:6.2f}%  \n".format(nm,ms,tc[ii],percent))
             data_file_out.write(temp_string)
         data_file_out.close()
@@ -249,10 +271,12 @@ def produce_graphs2():
     fig = go.Figure(data=data, layout=layout)
     of.plot(fig, filename='news_counts_graph.html')
 
+
+        
 #EKTELESH
 fill_names_table()
 fill_data_tables()
-#print_to_text()
-#print_to_text_grouped()
+print_to_text()
+print_to_text_grouped()
 #produce_graphs()
 #produce_graphs2()
