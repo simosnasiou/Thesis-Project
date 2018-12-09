@@ -14,3 +14,6 @@
 - Python MysSQL connector
 - Yandex translate API
 - Plotly
+### .html and .txt files are the results that the code exported during various stages of the project all the descriptions are in
+
+### greek for now
