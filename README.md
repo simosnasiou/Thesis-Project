@@ -1,4 +1,4 @@
-#Thesis Project
+# Thesis Project
 ## This is the project for my graduation thesis roughly titled :
 *"Defining the objectivity of node in an network of news transmition"*
 
